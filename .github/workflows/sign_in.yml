@@ -2,7 +2,7 @@ name: Daily Sign In
 
 on:
   schedule:
-    - cron: "0 6 * * *"
+    - cron: "20 23 * * *"
 
 jobs:
   sign-in:
