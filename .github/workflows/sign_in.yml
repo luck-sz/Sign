@@ -1,0 +1,24 @@
+name: Daily Sign In
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+
+jobs:
+  sign-in:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10.12'
+
+      - name: Install requests library
+        run: pip install requests
+
+      - name: Run sign-in script
+        run: python sign_in.py
